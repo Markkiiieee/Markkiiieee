@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 33px 9%;
+    background: transparent;
+}
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+.navlist {
+    display: flex;
+}
+.navlist a {
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+}
+.navlist a:hover {
+    border-bottom: 2px solid #9117ac;
+}
+#menu-icon {
+    color: #9117ac;
+    font-size: 30px;
+    z-index: 1000;
+    cursor: pointer;
+    display: none;
+}
+.myself {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: black;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+section {
+    padding: 0 19%;
+}
+.myself-img img {
+    width: 300px;
+    height: auto;
+}
+.myself-text p {
+    color: white;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+.myself-text h5 {
+    font-size: 15px;
+    color: white;
+    margin: 13px;
+}
+@media (max-width: 990px) {
+    #menu-icon {
+        display: block;
+    }
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 300px;
+        height: 40vh;
+        background: #9117ac;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 20px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        transition: all .55s ease;
+    }
+    .navlist a {
+        margin-left: 0;
+        display: block;
+        margin: 10px 0;
+    }
+    .navlist.open {
+        right: 0;
+    }
+    .myself {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        padding: 0 10px;
+        align-items: center; /* Adjusted padding for smaller screens */
+    }
+    .myself-img img {
+        width: 100%; /* Responsive image */
+        max-width: 300px; /* Limiting image size on larger screens */
+        height: auto;
+        align-items: center;
+    }
+    .myself-img {
+        margin-top: 100px; /* Adjusted margin for smaller screens */
+    }
+}
